@@ -1,13 +1,8 @@
-# Angular 21 Employee Management App
+# Angular 21 Employee Management Application
 
-A test project showcasing modern Angular 21 development practices with signals, standalone components, and reactive patterns.
+A modern Angular 21 application demonstrating employee management with routing and data visualization.
 
-## Prerequisites
-
-- Node.js 22.x or higher
-- npm 10.x or higher
-
-## Setup
+## Quick Start
 
 ```bash
 npm install
@@ -16,24 +11,56 @@ npm start
 
 Navigate to [http://localhost:4200](http://localhost:4200)
 
-## Build
+## Tech Stack
+
+- **Angular 21.2.0** - Latest stable release
+- **TypeScript 5.9.3** - Strict mode enabled
+- **RxJS 7.8.1** - Reactive programming
+- **Signals** - Modern state management
+- **Standalone Components** - No NgModules required
+
+## Available Scripts
 
 ```bash
+# Start development server
+npm start
+
+# Build for production
 npm run build
+
+# Run tests
+npm test
+
+# Run E2E tests
+npm run e2e
 ```
 
-## Technologies
+## Application Routes
 
-- Angular 21.2.0
-- TypeScript 5.9.3
-- RxJS 7.8.1
-- Angular Material 21.2.0
+- `/employees` - Employee list view
+- `/employees/:id` - Employee detail view
+- `/statistics` - Employee statistics dashboard
 
-## Key Concepts Demonstrated
+## Project Structure
 
-- Signals and `toSignal()` for reactive state
-- `inject()` function for dependency injection
-- Standalone components (no NgModules)
-- Modern control flow (`@if`, `@for`, `@empty`)
-- Computed signals for derived state
-- Route-driven data loading
+```
+src/app/
+├── employee/
+│   ├── employee-loader.service.ts
+│   ├── employee-list/
+│   ├── employee-detail/
+│   └── employee-statistics/
+├── shared/
+│   └── employee-header/
+├── app.component.ts
+├── app.routes.ts
+└── main.ts
+```
+
+## Development
+
+This project uses Angular 21 with standalone components, signals, and modern routing patterns.
+
+## License
+
+MIT

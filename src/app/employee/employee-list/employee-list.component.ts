@@ -7,6 +7,7 @@ import { Employee, EmployeeLoader } from '../employee-loader.service';
 @Component({
   selector: 'employee-list',
   templateUrl: './employee-list.component.html',
+  styleUrls: ['./employee-list.component.scss'],
   standalone: true,
   imports: [RouterLink],
 })

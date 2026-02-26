@@ -1,22 +1,36 @@
 <section class="card">
   <div class="card-content">
     @if (employee(); as emp) {
-      <div class="card-title">Name: {{ fullName() }}</div>
-      <p>
-        Email: <strong>{{ emp.email }}</strong>
-      </p>
-      <p>
-        Hours Worked:
-        <strong>{{ emp.hoursWorked }}</strong>
-      </p>
-      <p>
-        Hourly Wage:
-        <strong>{{ emp.hourlyWage | currency }}</strong>
-      </p>
+      <div class="card-title">👤 {{ fullName() }}</div>
+
+      <div class="detail-grid">
+        <div class="detail-item">
+          <label>Email</label>
+          <strong>{{ emp.email }}</strong>
+        </div>
+
+        <div class="detail-item">
+          <label>Hours Worked</label>
+          <strong>{{ emp.hoursWorked }} hrs</strong>
+        </div>
+
+        <div class="detail-item">
+          <label>Hourly Wage</label>
+          <strong>{{ emp.hourlyWage | currency }}</strong>
+        </div>
+
+        <div class="detail-item">
+          <label>Total Earnings</label>
+          <strong class="highlight">{{
+            emp.hoursWorked * emp.hourlyWage | currency
+          }}</strong>
+        </div>
+      </div>
     } @else {
-      <p>Loading employee details...</p>
+      <div class="loading">Loading employee details...</div>
     }
+
     <hr />
-    <a routerLink="/employees">Back to list</a>
+    <a routerLink="/employees" class="back-link">← Back to Employee List</a>
   </div>
 </section>

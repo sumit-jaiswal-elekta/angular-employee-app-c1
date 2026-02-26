@@ -1,0 +1,58 @@
+<div class="statistics-container" *ngIf="!isLoading">
+  <h2>Employee Statistics</h2>
+
+  <div class="stat-cards">
+    <div
+      class="stat-card"
+      style="background-color: #e3f2fd; padding: 20px; margin: 10px"
+    >
+      <div class="stat-label">Total Employees</div>
+      <div class="stat-value" #totalElement>{{ totalEmployees }}</div>
+    </div>
+
+    <div
+      class="stat-card"
+      style="background-color: #f3e5f5; padding: 20px; margin: 10px"
+    >
+      <div class="stat-label">Total Payroll</div>
+      <div class="stat-value">{{ formatCurrency(totalPayroll) }}</div>
+    </div>
+
+    <div
+      class="stat-card"
+      style="background-color: #e8f5e9; padding: 20px; margin: 10px"
+    >
+      <div class="stat-label">Average Hourly Wage</div>
+      <div class="stat-value">{{ formatCurrency(averageWage) }}</div>
+    </div>
+  </div>
+
+  <div class="highest-paid" *ngIf="highestPaidEmployee">
+    <h3>Highest Paid Employee</h3>
+    <p>
+      <strong
+        >{{ highestPaidEmployee.firstName }}
+        {{ highestPaidEmployee.lastName }}</strong
+      >
+      <br />
+      Total Earnings:
+      {{ formatCurrency(getEmployeePayroll(highestPaidEmployee)) }}
+    </p>
+  </div>
+
+  <div class="employee-list">
+    <h3>All Employees</h3>
+    <div *ngFor="let employee of employees" class="employee-row">
+      <span>{{ employee.firstName }} {{ employee.lastName }}</span>
+      <span>{{ formatCurrency(getEmployeePayroll(employee)) }}</span>
+    </div>
+  </div>
+
+  <button (click)="refreshData()" style="margin-top: 20px; padding: 10px 20px">
+    Refresh Data
+  </button>
+</div>
+
+<div *ngIf="isLoading" style="text-align: center; padding: 50px">
+  Loading...
+</div>

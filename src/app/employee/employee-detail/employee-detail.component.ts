@@ -9,6 +9,7 @@ import { Employee, EmployeeLoader } from '../employee-loader.service';
 @Component({
   selector: 'employee-detail',
   templateUrl: './employee-detail.component.html',
+  styleUrls: ['./employee-detail.component.scss'],
   standalone: true,
   imports: [RouterLink, CurrencyPipe],
 })

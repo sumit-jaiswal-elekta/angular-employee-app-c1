@@ -1,15 +1,23 @@
 <header>
   <nav>
     <div class="nav-wrapper">
+      <h1>Employee Management System</h1>
       <ul>
         <li routerLinkActive="green-background">
           <a routerLink="/employees">Employee List</a>
+        </li>
+        <li routerLinkActive="green-background">
+          <a routerLink="/statistics">Statistics</a>
         </li>
       </ul>
     </div>
   </nav>
 </header>
 
-<router-outlet></router-outlet>
+<main>
+  <router-outlet></router-outlet>
+</main>
 
-<footer>Footer</footer>
+<footer>
+  <p>Angular 21 Application | Modern Signals & Standalone Components</p>
+</footer>
