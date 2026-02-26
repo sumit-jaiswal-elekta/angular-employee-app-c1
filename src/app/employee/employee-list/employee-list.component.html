@@ -1,0 +1,14 @@
+<section class="card">
+  <div class="card-content">
+    <div class="card-title">Select Employee</div>
+    @for (employee of employees(); track employee.id) {
+      <p>
+        <a [routerLink]="[employee.id]">
+          {{ employee.firstName }} {{ employee.lastName }}
+        </a>
+      </p>
+    } @empty {
+      <p>Loading employees...</p>
+    }
+  </div>
+</section>
